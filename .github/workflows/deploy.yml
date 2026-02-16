@@ -25,6 +25,9 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Install Composer Dependencies
+        run: composer install --no-dev --optimize-autoloader
+
       # ✅ ADD: Install JS dependencies
       - name: Install frontend dependencies
         run: npm ci
