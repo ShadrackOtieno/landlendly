@@ -121,219 +121,157 @@ const getPropertyImage = (property) => {
     <Head title="Find Your Perfect Rental Home in Kenya" />
 
     <AppLayout>
-        <!-- Hero Section - Fresh Gradient -->
         <section
-            class="relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 overflow-hidden"
+            class="relative min-h-[85vh] flex items-center bg-slate-900 overflow-hidden"
         >
-            <!-- Decorative Elements -->
-            <div
-                class="absolute top-0 right-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20"
-            ></div>
-            <div
-                class="absolute bottom-0 left-0 w-96 h-96 bg-teal-200 rounded-full blur-3xl opacity-20"
-            ></div>
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80"
+                    alt="Modern Living Space"
+                    class="w-full h-full object-cover opacity-50"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent"
+                ></div>
+            </div>
 
-            <div class="relative max-w-7xl mx-auto px-4 py-20">
-                <div class="text-center max-w-4xl mx-auto mb-12">
+            <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 w-full">
+                <div class="max-w-3xl">
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm mb-6"
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm mb-6"
                     >
-                        <SparklesIcon class="w-4 h-4 text-emerald-600" />
-                        <span class="text-sm font-medium text-gray-700"
-                            >Trusted by 10,000+ renters</span
+                        <span
+                            class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"
+                        ></span>
+                        <span
+                            class="text-xs font-semibold uppercase tracking-widest text-emerald-400"
+                            >Direct-to-Tenant Marketplace</span
                         >
                     </div>
+
                     <h1
-                        class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                        class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]"
                     >
-                        Discover Your
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600"
-                            >Dream Home</span
+                        Find your next home <br />
+                        <span class="text-emerald-400"
+                            >without the broker fees.</span
                         >
                     </h1>
-                    <p class="text-xl text-gray-600 leading-relaxed">
-                        Explore verified properties across Kenya. Connect
-                        directly with owners. Zero broker fees.
-                    </p>
-                </div>
 
-                <!-- Enhanced Filter Section -->
-                <div
-                    class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-8 max-w-6xl mx-auto"
-                >
-                    <form @submit.prevent="handleSearch" class="space-y-6">
-                        <!-- Main Filters -->
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                            <!-- Location -->
-                            <div class="md:col-span-4">
-                                <label
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    <MapPinIcon
-                                        class="w-4 h-4 inline mr-1 text-emerald-600"
-                                    />
-                                    Location
-                                </label>
+                    <p
+                        class="text-base md:text-lg text-slate-300 mb-10 max-w-xl leading-relaxed opacity-90"
+                    >
+                        Join 10,000+ Kenyans connecting directly with property
+                        owners. Transparent listings. Verified landlords. Zero
+                        commissions.
+                    </p>
+
+                    <div
+                        class="bg-white/10 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-2xl max-w-4xl"
+                    >
+                        <form
+                            @submit.prevent="handleSearch"
+                            class="flex flex-col md:flex-row items-stretch gap-2"
+                        >
+                            <div class="flex-1 relative group">
+                                <MapPinIcon
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-400"
+                                />
                                 <input
                                     v-model="searchForm.location"
                                     type="text"
-                                    placeholder="City or neighborhood"
-                                    class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                                    placeholder="Location..."
+                                    class="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
                                 />
                             </div>
 
-                            <!-- Property Type -->
-                            <div class="md:col-span-3">
-                                <label
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    <HomeIcon
-                                        class="w-4 h-4 inline mr-1 text-emerald-600"
-                                    />
-                                    Property Type
-                                </label>
+                            <div class="flex-1 relative">
+                                <HomeIcon
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-400"
+                                />
                                 <select
                                     v-model="searchForm.type"
-                                    class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition appearance-none"
+                                    class="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white appearance-none focus:outline-none focus:ring-1 focus:ring-emerald-500 text-sm"
                                 >
-                                    <option value="">All Types</option>
+                                    <option
+                                        value=""
+                                        class="bg-slate-800 text-white"
+                                    >
+                                        All Types
+                                    </option>
                                     <option
                                         v-for="type in propertyTypes"
                                         :key="type.type"
                                         :value="type.type"
+                                        class="bg-slate-800 text-white"
                                     >
                                         {{ type.type }}
                                     </option>
                                 </select>
                             </div>
 
-                            <!-- Price Range -->
-                            <div class="md:col-span-3">
-                                <label
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    <CurrencyDollarIcon
-                                        class="w-4 h-4 inline mr-1 text-emerald-600"
-                                    />
-                                    Max Price
-                                </label>
+                            <div class="flex-1 relative">
+                                <CurrencyDollarIcon
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-400"
+                                />
                                 <input
                                     v-model="searchForm.max_price"
                                     type="number"
-                                    placeholder="Enter amount"
-                                    class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                                    placeholder="Max Price"
+                                    class="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500 text-sm"
                                 />
                             </div>
 
-                            <!-- Search Button -->
-                            <div class="md:col-span-2 flex items-end">
-                                <button
-                                    type="submit"
-                                    class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3.5 px-6 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/30"
-                                >
-                                    <MagnifyingGlassIcon class="w-5 h-5" />
-                                    <span class="hidden md:inline">Search</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Advanced Filters Toggle -->
-                        <div class="flex items-center justify-between pt-2">
                             <button
-                                type="button"
-                                @click="
-                                    showAdvancedFilters = !showAdvancedFilters
-                                "
-                                class="text-sm font-medium text-emerald-600 hover:text-emerald-700 flex items-center gap-2"
+                                type="submit"
+                                class="md:w-auto px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-xl transition-all flex items-center justify-center gap-2 group shadow-lg shadow-emerald-500/20"
                             >
-                                <AdjustmentsHorizontalIcon class="w-4 h-4" />
-                                {{ showAdvancedFilters ? "Hide" : "Show" }}
-                                Advanced Filters
-                            </button>
-                            <div class="text-sm text-gray-500">
-                                {{ stats.total_properties || 0 }} properties
-                                available
-                            </div>
-                        </div>
-
-                        <!-- Advanced Filters Panel -->
-                        <div
-                            v-if="showAdvancedFilters"
-                            class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-100"
-                        >
-                            <div>
-                                <label
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                    >Min Price</label
-                                >
-                                <input
-                                    v-model="searchForm.min_price"
-                                    type="number"
-                                    placeholder="From"
-                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                                <MagnifyingGlassIcon
+                                    class="w-4 h-4 group-hover:scale-110 transition-transform"
                                 />
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                    >Bedrooms</label
-                                >
-                                <select
-                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
-                                >
-                                    <option value="">Any</option>
-                                    <option>1+</option>
-                                    <option>2+</option>
-                                    <option>3+</option>
-                                    <option>4+</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                    >Bathrooms</label
-                                >
-                                <select
-                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
-                                >
-                                    <option value="">Any</option>
-                                    <option>1+</option>
-                                    <option>2+</option>
-                                    <option>3+</option>
-                                </select>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                                Search
+                            </button>
+                        </form>
+                    </div>
 
-                <!-- Quick Stats -->
-                <div
-                    class="grid grid-cols-3 gap-6 mt-12 max-w-3xl mx-auto text-center"
-                >
-                    <div class="bg-white/70 backdrop-blur rounded-2xl p-6">
-                        <div
-                            class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600"
-                        >
-                            {{ stats.total_properties || 0 }}+
+                    <div class="mt-8 flex items-center gap-8">
+                        <div class="flex flex-col">
+                            <span class="text-white font-bold text-xl">{{
+                                stats.total_properties || "1.2k"
+                            }}</span>
+                            <span
+                                class="text-slate-400 text-xs uppercase tracking-tighter"
+                                >Listed Homes</span
+                            >
                         </div>
-                        <div class="text-sm text-gray-600 mt-2">Properties</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur rounded-2xl p-6">
-                        <div
-                            class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600"
-                        >
-                            {{ stats.total_locations || 0 }}+
+                        <div class="w-px h-8 bg-white/10"></div>
+                        <div class="flex flex-col">
+                            <span class="text-white font-bold text-xl"
+                                >Verified</span
+                            >
+                            <span
+                                class="text-slate-400 text-xs uppercase tracking-tighter"
+                                >Landlords</span
+                            >
                         </div>
-                        <div class="text-sm text-gray-600 mt-2">Locations</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur rounded-2xl p-6">
-                        <div
-                            class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600"
-                        >
-                            24/7
+                        <div class="w-px h-8 bg-white/10"></div>
+                        <div class="flex -space-x-2">
+                            <img
+                                class="inline-block h-8 w-8 rounded-full ring-2 ring-slate-900"
+                                src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt=""
+                            />
+                            <img
+                                class="inline-block h-8 w-8 rounded-full ring-2 ring-slate-900"
+                                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt=""
+                            />
+                            <div
+                                class="h-8 w-8 rounded-full bg-emerald-500 flex items-center justify-center ring-2 ring-slate-900 text-[10px] font-bold"
+                            >
+                                +10k
+                            </div>
                         </div>
-                        <div class="text-sm text-gray-600 mt-2">Support</div>
                     </div>
                 </div>
             </div>
