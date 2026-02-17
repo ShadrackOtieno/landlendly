@@ -347,7 +347,7 @@ const getPropertyImage = (property) => {
                         <h2
                             class="text-3xl md:text-4xl font-bold text-gray-900 mb-2"
                         >
-                            Featured Properties
+                            Featured Listings
                         </h2>
                         <p class="text-gray-600">
                             Hand-picked premium listings
